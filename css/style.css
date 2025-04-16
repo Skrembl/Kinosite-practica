@@ -1,0 +1,25 @@
+body {
+    max-width: 1920px;
+    background: url('../images/bg-def.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-transform: capitalize;
+}
+
+& {
+    --main-color: springgreen;
+    --bg-color-1: #222;
+    --bg-color-2: #111;
+    --text-color-1: #eee;
+    --text-color-2: #fff;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.8);
+
+    --big-fz: calc(25px + (65 - 25) * (100vw - 300px) / (1500 - 300));
+    --medium-fz: calc(16px + (35 - 16) * (100vw - 300px) / (1500 - 300));
+    --small-fz: calc(12px + (18 - 12) * (100vw - 300px) / (1500 - 300));
+}
+
+.container {
+    padding: 0 200px;
+
+}
