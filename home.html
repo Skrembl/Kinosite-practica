@@ -15,13 +15,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+<!-- !Rubik Wet Paint -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
 <body>
   <div id="top"></div>
-      <header class="header">
+      <header class="header" id="body-bg">
             <div class="container">
                 <div class="navbar">
                     <a href="home.html">
@@ -44,58 +49,57 @@
             </div>
             <div class="carousel-container">
                 <div class="carousel-track" id="carousel">
-                  <div class="card" data-bg="images/cards/bg-cards/card1.png">
+                  <div data-id="1" class="card card-all" data-bg="images/cards/bg-cards/card1.png">
                     <img src="images/cards/card1.png" alt="Lion King" draggable="false"/>
                 </div>
-                  <div class="card" data-bg="images/cards/bg-cards/card2.png">
+                  <div data-id="2" class="card card-all" data-bg="images/cards/bg-cards/card2.png">
                     <img src="images/cards/card2.png" alt="Vikings" draggable="false"/>
                 </div>
-                  <div class="card" data-bg="images/cards/bg-cards/card3.png">
+                  <div data-id="3" class="card card-all" data-bg="images/cards/bg-cards/card3.png">
                     <img src="images/cards/card3.png" alt="Zəhər Tuluğu" draggable="false"/>
                 </div>
-                  <div class="card" data-bg="images/cards/bg-cards/card4.png">
+                  <div data-id="4" class="card card-all" data-bg="images/cards/bg-cards/card4.png">
                     <img src="images/cards/card4.png" alt="GoT" draggable="false"/>
                 </div>
-                  <div class="card" data-bg="images/cards/bg-cards/card5.png">
+                  <div data-id="5" class="card card-all" data-bg="images/cards/bg-cards/card5.png">
                     <img src="images/cards/card5.png" alt="Mortal Kombat" draggable="false"/>
                 </div>
-                  <div class="card" data-bg="images/cards/bg-cards/card6.png">
+                  <div data-id="6" class="card card-all" data-bg="images/cards/bg-cards/card6.png">
                     <img src="images/cards/card6.png" alt="Bliss" draggable="false"/>
                 </div>
-                  <div class="card" data-bg="images/cards/bg-cards/card7.png">
+                  <div data-id="7" class="card card-all" data-bg="images/cards/bg-cards/card7.png">
                     <img src="images/cards/card7.png" alt="After the Rain" draggable="false"/>
                 </div>
-                  <div class="card" data-bg="images/cards/bg-cards/card8.png">
+                  <div data-id="8" class="card card-all" data-bg="images/cards/bg-cards/card8.png">
                     <img src="images/cards/card8.png" alt="Up from Slavery" draggable="false"/>
                 </div>
             
-                <div class="card" data-bg="images/cards/bg-cards/card1.png">
+                <div data-id="1" class="card card-all" data-bg="images/cards/bg-cards/card1.png">
                   <img src="images/cards/card1.png" alt="Lion King" draggable="false"/>
               </div>
-                <div class="card" data-bg="images/cards/bg-cards/card2.png">
+                <div data-id="2" class="card card-all" data-bg="images/cards/bg-cards/card2.png">
                   <img src="images/cards/card2.png" alt="Vikings" draggable="false"/>
               </div>
-                <div class="card" data-bg="images/cards/bg-cards/card3.png">
+                <div data-id="3" class="card card-all" data-bg="images/cards/bg-cards/card3.png">
                   <img src="images/cards/card3.png" alt="Zəhər Tuluğu" draggable="false"/>
               </div>
-                <div class="card" data-bg="images/cards/bg-cards/card4.png">
+                <div data-id="4" class="card card-all" data-bg="images/cards/bg-cards/card4.png">
                   <img src="images/cards/card4.png" alt="GoT" draggable="false"/>
               </div>
-                <div class="card" data-bg="images/cards/bg-cards/card5.png">
+                <div data-id="5" class="card card-all" data-bg="images/cards/bg-cards/card5.png">
                   <img src="images/cards/card5.png" alt="Mortal Kombat" draggable="false"/>
               </div>
-                <div class="card" data-bg="images/cards/bg-cards/card6.png">
+                <div data-id="6" class="card card-all" data-bg="images/cards/bg-cards/card6.png">
                   <img src="images/cards/card6.png" alt="Bliss" draggable="false"/>
               </div>
-                <div class="card" data-bg="images/cards/bg-cards/card7.png">
+                <div data-id="7" class="card card-all" data-bg="images/cards/bg-cards/card7.png">
                   <img src="images/cards/card7.png" alt="After the Rain" draggable="false"/>
               </div>
-                <div class="card" data-bg="images/cards/bg-cards/card8.png">
+                <div data-id="8" class="card card-all" data-bg="images/cards/bg-cards/card8.png">
                   <img src="images/cards/card8.png" alt="Up from Slavery" draggable="false"/>
               </div>
                 </div>
               </div>
-              <div class="background"></div>
       </header>
 
       <main class="main">
@@ -104,7 +108,7 @@
           <div class="main-info">
             <h4 class="more-title">Новинки</h4>
             <div class="more">
-              <h4 class="more-text">Увидеть больше</h4>
+              <a href="#!" class="more-text">Увидеть больше</a>
               <img src="./images/icons/arrow-right.svg" alt="arrow" class="more-arrow">
             </div>
           </div>
@@ -115,7 +119,7 @@
                 <img src="./images/cards-main/card1.png" alt="C1">
               </a>
               <div class="mc-overlay">
-                <button>
+                <button data-id="1" class="card-all" data-bg="images/cards/bg-cards/card1.png">
                   <a href="#!">О фильме</a>
                 </button>
               </div>
@@ -125,7 +129,7 @@
                 <img src="./images/cards-main/card2.png" alt="C2">
               </a>
               <div class="mc-overlay">
-                <button>
+                <button data-id="2" class="card-all" data-bg="images/cards/bg-cards/card2.png">
                   <a href="#!">О фильме</a>
                 </button>
               </div>
@@ -135,30 +139,30 @@
                 <img src="./images/cards-main/card3.png" alt="C3">
               </a>
               <div class="mc-overlay">
-                <button>
+                <button data-id="3" class="card-all" data-bg="images/cards/bg-cards/card3.png">
                   <a href="#!">О фильме</a>
                 </button>
               </div>
             </div>
-            <div class="mc-content">
+            <div class="mc-content ">
               <a href="#!">
                 <img src="./images/cards-main/card4.png" alt="C4">
               </a>
               <div class="mc-overlay">
-                <button>
+                <button data-id="4" class="card-all" data-bg="images/cards/bg-cards/card4.png">
                   <a href="#!">О фильме</a>
                 </button>
               </div>
             </div>
           </div>
 
-          <div class="main-cards__two">
+          <div class="main-cards__two content">
             <div class="mc-content">
               <a href="#!">
                 <img src="./images/cards-main/card5.png" alt="C5">
               </a>
               <div class="mc-overlay">
-                <button>
+                <button data-id="5" class="card-all" data-bg="images/cards/bg-cards/card5.png">
                   <a href="#!">О фильме</a>
                 </button>
               </div>
@@ -168,7 +172,7 @@
                 <img src="./images/cards-main/card6.png" alt="C6">
               </a>
               <div class="mc-overlay">
-                <button>
+                <button data-id="6" class="card-all" data-bg="images/cards/bg-cards/card6.png">
                   <a href="#!">О фильме</a>
                 </button>
               </div>
@@ -178,7 +182,7 @@
                 <img src="./images/cards-main/card7.png" alt="C7">
               </a>
               <div class="mc-overlay">
-                <button>
+                <button data-id="7" class="card-all" data-bg="images/cards/bg-cards/card7.png">
                   <a href="#!">О фильме</a>
                 </button>
               </div>
@@ -188,7 +192,7 @@
                 <img src="./images/cards-main/card8.png" alt="C8">
               </a>
               <div class="mc-overlay">
-                <button>
+                <button data-id="8" class="card-all" data-bg="images/cards/bg-cards/card8.png">
                   <a href="#!">О фильме</a>
                 </button>
               </div>
@@ -241,7 +245,7 @@
             </div>
           </div>
           <hr class="footer-line">
-          <a href="#!">Copyright © 2025 Akim. All rights reserved.</a>
+          <a href="#!" class="footer__text">Copyright © 2025 Akim. All rights reserved.</a>
         </div>
       </footer>
 </body>
