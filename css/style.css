@@ -27,10 +27,11 @@ body {
 }
 
 #body-bg {
+    position: relative;
     background-image: url("../images/bg-def.png");
-    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: background-image .5s ease;
 }
 
 .container {
@@ -509,4 +510,3 @@ body {
     }
 }
 
-.movie-card 

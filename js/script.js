@@ -1,3 +1,33 @@
+// ! Смена изображения при наведении на карточки(карусель)
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card-all");
+    const bodyBg = document.getElementById("body-bg");
+    const defaultBg = bodyBg.style.backgroundImage;
+
+    const preloadImages = () => {
+        const images = new Set();
+        cards.forEach((card) => {
+            const bg = card.dataset.bg;
+            if (bg) images.add(bg);
+        });
+        images.forEach((src) => {
+            new Image().src = src;
+        });
+    };
+    preloadImages();
+
+    cards.forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+            const bgImage = this.dataset.bg;
+            bodyBg.style.backgroundImage = `url(${bgImage})`;
+        });
+
+        card.addEventListener("mouseleave", function () {
+            bodyBg.style.backgroundImage = defaultBg;
+        });
+    });
+});
+
 // ! Обработчик + вывод по айди
 document.querySelectorAll(".card-all").forEach((card) => {
     card.addEventListener("click", () => {
@@ -30,19 +60,19 @@ if (id) {
 }
 
 const usp = new URLSearchParams(window.location.search);
-    const idUsp = usp.get("id");
-    const bgUrl = usp.get("bg");
+const idUsp = usp.get("id");
+const bgUrl = usp.get("bg");
 
-    if(bgUrl) {
-        const headerBg = document.getElementById("body-bg__movie");
-        headerBg.style.backgroundImage = `url(${decodeURIComponent(bgUrl)})`;
-        headerBg.style.backgroundSize = "cover";
-        headerBg.style.backgroundPosition = "center";
-        headerBg.style.height = "930px";
-    }
+if (bgUrl) {
+    const headerBg = document.getElementById("body-bg__movie");
+    headerBg.style.backgroundImage = `url(${decodeURIComponent(bgUrl)})`;
+    headerBg.style.backgroundSize = "cover";
+    headerBg.style.backgroundPosition = "center";
+    headerBg.style.height = "930px";
+}
 
-    if(id) {
-        document.querySelectorAll(".movie-card").forEach((card) => {
-            card.style.display = card.id === id ? "block" : "none";
-        });
-    }
+if (id) {
+    document.querySelectorAll(".movie-card").forEach((card) => {
+        card.style.display = card.id === id ? "block" : "none";
+    });
+}
