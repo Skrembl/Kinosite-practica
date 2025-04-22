@@ -248,37 +248,5 @@
           <a href="#!" class="footer__text">Copyright © 2025 Akim. All rights reserved.</a>
         </div>
       </footer>
-
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card-all');
-            const bodyBg = document.getElementById('body-bg');
-            const defaultBg = bodyBg.style.backgroundImage;
-        
-            const preloadImages = () => {
-                const images = new Set();
-                cards.forEach(card => {
-                    const bg = card.dataset.bg;
-                    if(bg) images.add(bg);
-                });
-                
-                images.forEach(src => {
-                    new Image().src = src;
-                });
-            };
-            preloadImages();
-        
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    const bgImage = this.dataset.bg;
-                    bodyBg.style.backgroundImage = `url(${bgImage})`;
-                });
-        
-                card.addEventListener('mouseleave', function() {
-                    bodyBg.style.backgroundImage = defaultBg;
-                });
-            });
-        });
-        </script>
 </body>
 </html>

@@ -44,7 +44,7 @@ const id = params.get("id");
 if (id) {
     document.querySelectorAll(".movie-card").forEach((card) => {
         if (card.id === id) {
-            card.style.display = "block";
+            card.style.display = "flex";
         } else {
             card.style.display = "none";
         }
@@ -73,6 +73,6 @@ if (bgUrl) {
 
 if (id) {
     document.querySelectorAll(".movie-card").forEach((card) => {
-        card.style.display = card.id === id ? "block" : "none";
+        card.style.display = card.id === id ? "flex" : "none";
     });
 }
