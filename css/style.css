@@ -12,7 +12,7 @@ body {
 
 & {
     --main-color: #fff;
-    --gray-color: #7F7F7F;
+    --gray-color: #7f7f7f;
     --bg-color-1: #000000;
     --bg-color-2: #191919;
     --bg-color-3: #8e6821;
@@ -20,7 +20,7 @@ body {
     --bg-color-5: #e5d688;
     --text-color-1: #b49150;
     --text-color-2: #ffffff99;
-    --text-color-3: #EDE091;
+    --text-color-3: #ede091;
 }
 
 .none {
@@ -34,7 +34,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    transition: background-image .5s ease;
+    transition: background-image 0.5s ease;
 }
 
 .container {
@@ -402,7 +402,7 @@ body {
 }
 
 .socials a {
-    transition: all .3s linear;
+    transition: all 0.3s linear;
 }
 
 .socials a:hover {
@@ -503,7 +503,7 @@ body {
     background-color: var(--bg-color-1);
     border: 2px solid var(--bg-color-5);
     border-radius: 16px;
-    transition: all .3s linear;
+    transition: all 0.3s linear;
 
     & a {
         font-size: clamp(18px, 1.4vw, 24px);
@@ -512,7 +512,7 @@ body {
         font-family: "Roboto", sans-serif;
         font-weight: 500;
         color: var(--bg-color-4);
-        transition: all .3s linear;
+        transition: all 0.3s linear;
     }
 }
 
@@ -523,6 +523,10 @@ body {
     & a {
         color: var(--main-color);
     }
+}
+
+.mc-all {
+    display: flex;
 }
 
 .movie-card__info {
@@ -539,7 +543,7 @@ body {
 .mc-info {
     width: 700px;
     margin-bottom: 15px;
-    font-size: clamp(14px, 1vw, 28px);
+    font-size: clamp(14px, 1.4vw, 28px);
     line-height: 40px;
 }
 
@@ -549,7 +553,7 @@ body {
     line-height: 40px;
     letter-spacing: 1.4px;
     color: var(--text-color-3);
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
 }
 
 .movie-card__info a:hover {
@@ -562,4 +566,253 @@ body {
     padding: 70px 119px 70px 50px;
     background-color: var(--bg-color-4);
     border-radius: 30px;
+}
+
+/* ! --------------------------------- Создание звезд -------------------------------- */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+    position: relative;
+    width: 80px;
+    height: 77px;
+}
+
+.rating label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/icons/star.svg");
+    background-size: cover;
+    transition: all 0.3s ease;
+}
+
+.rating label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../images/icons/star-hover.svg");
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.rating label span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    z-index: 2;
+}
+
+.rating input:checked ~ label::after,
+.rating label:hover::after,
+.rating label:hover ~ label::after {
+    opacity: 1;
+}
+
+.rating label:hover::before {
+    filter: brightness(1.2);
+}
+/* ! --------------------------------- Создание звезд -------------------------------- */
+
+.card-grade h2 {
+    margin-bottom: 15px;
+    font-size: clamp(20px, 1.2vw, 36px);
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.card-grade p {
+    margin-bottom: 45px;
+    font-size: clamp(14px, 1vw, 24px);
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.movie-card h1 {
+    margin-top: 150px;
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: clamp(36px, 2.5vw, 64px);
+    font-weight: 500;
+    line-height: 70px;
+    letter-spacing: 6.4px;
+}
+
+/* ! --------------------- Форма ------------------------ */
+
+.container-form {
+    padding: 0px 160px;
+}
+
+.movie-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding: 100px 0px;
+    margin-bottom: 77px;
+    border: 3px solid var(--bg-color-4);
+    border-radius: 50px;
+}
+
+.form-name {
+    width: 800px;
+    height: 100px;
+    padding: 31px 0px 31px 30px;
+    font-size: clamp(14px, 1.5vw, 32px);
+    border: 2px solid var(--bg-color-4);
+    border-radius: 20px;
+
+    &::placeholder {
+        font-size: clamp(14px, 1.5vw, 32px);
+        color: var(--text-color-2);
+    }
+}
+
+.form-message {
+    width: 800px;
+    height: 250px;
+    padding: 31px 0px 31px 30px;
+    font-size: clamp(14px, 1.5vw, 32px);
+    border: 2px solid var(--bg-color-4);
+    border-radius: 20px;
+    resize: none;
+
+    &::placeholder {
+        font-size: clamp(14px, 1.5vw, 32px);
+        color: var(--text-color-2);
+    }
+}
+
+.form-btn {
+    padding: 23px 80px;
+    border: 3px solid var(--bg-color-5);
+    border-radius: 16px;
+    transition: all 0.3s ease-in;
+
+    & a {
+        font-size: clamp(14px, 1.3vw, 24px);
+        font-weight: 500;
+        line-height: 24px;
+        transition: all 0.3s ease-in;
+    }
+}
+
+.form-btn:hover {
+    background-color: var(--bg-color-5);
+    border: 3px solid var(--bg-color-3);
+
+    & a {
+        color: var(--bg-color-3);
+    }
+}
+
+/* ! --------------------- Форма ------------------------ */
+
+.block-reviews {
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in;
+}
+
+.block-reviews a {
+    margin-right: 10px;
+    font-size: clamp(20px, 1.2vw, 36px);
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 3.6px;
+}
+
+.block-reviews:hover {
+    transform: translateY(-10px);
+}
+
+.reviews-cards {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.rc-one {
+    width: 735px;
+    padding: 40px 60px;
+    background-color: var(--bg-color-4);
+    border-radius: 50px;
+}
+
+.rc-one h6 {
+    margin-bottom: 10px;
+    font-size: clamp(14px, 2vw, 32px);
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 1.6px;
+}
+
+.raiting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.raiting span {
+    font-size: clamp(14px, 1.2vw, 24px);
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 1.2px;
+    color: var(--text-color-2);
+}
+
+.rate {
+    width: 85px;
+    height: 85px;
+    background-color: var(--bg-color-3);
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.rate p {
+    padding: 15px 30px;
+    font-size: clamp(20px, 2vw, 40px);
+    font-weight: 500;
+    line-height: 56px;
+}
+
+.rc-text {
+    width: 530px;
+    margin-bottom: 25px;
+    font-size: clamp(14px, 1.2vw, 20px);
+    font-weight: 500;
+}
+
+.rc-one a {
+    font-size: clamp(14px, 1.2vw, 24px);
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 1.2px;
+    color: var(--bg-color-5);
+    transition: all 0.3s ease-in;
+}
+
+.rc-one a:hover {
+    color: var(--text-color-3);
 }

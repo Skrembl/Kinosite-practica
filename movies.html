@@ -128,43 +128,548 @@
       <main class="main">
         <div class="container-main__movies">
             <div class="movie-card" id="1">
-                <div class="movie-card__info">
+                <div class="mc-all">
+                  <div class="movie-card__info">
                     <h2 class="mc-title">Описание</h2>
-                    <p class="mc-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum...</p>
+                    <p class="mc-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et dolore<br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br> exercitation ullamco laboris nisi ut aliquip ex ea<br> commodo consequat. Duis aute irure dolor in<br> reprehenderit in voluptate velit esse cillum dolore eu<br> fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br> non proident, sunt in culpa qui officia deserunt mollit<br> anim id est laborum...</p>
                     <a href="#!">Подробное описание</a>
                 </div>
                 <div class="card-grade">
                     <h2>Поставьте оценку</h2>
                     <p>Оценки улучшают ваши рекомендации</p>
+                    <div class="rating">
+                      <input value="5" name="rating" id="star5-{{id}}" type="radio">
+                      <label for="star5-{{id}}"><span>5</span></label>
+                      <input value="4" name="rating" id="star4-{{id}}" type="radio">
+                      <label for="star4-{{id}}"><span>4</span></label>
+                      <input value="3" name="rating" id="star3-{{id}}" type="radio">
+                      <label for="star3-{{id}}"><span>3</span></label>
+                      <input value="2" name="rating" id="star2-{{id}}" type="radio">
+                      <label for="star2-{{id}}"><span>2</span></label>
+                      <input value="1" name="rating" id="star1-{{id}}" type="radio">
+                      <label for="star1-{{id}}"><span>1</span></label>
+                    </div>
                 </div>
+                </div>
+                <h1>Оставить <br>отзыв</h1>
+                <div class="container-form">
+                  <form action="#" class="movie-form">
+                    <input type="name" placeholder="Имя" class="form-name">
+                    <!-- <input type="text" placeholder="Сообщение" class="form-message"> -->
+                     <textarea name="text" id="message" placeholder="Сообщение" class="form-message"></textarea>
+                     <button type="button" class="form-btn">
+                      <a href="#!">Отправить</a>
+                     </button>
+                  </form>
+                </div>
+                  <div class="block-reviews">
+                    <a href="#!">Отзывы</a>
+                    <img src="./images/icons/arrow-reviews.svg" alt="arrow-right">
+                  </div>
+                  <div class="reviews-cards">
+                    <div class="rc-one">
+                      <div class="raiting">
+                        <div class="rc-info">
+                          <h6>Илья</h6>
+                          <span>15.04.2025</span>
+                        </div>
+                        <div class="rate">
+                          <p>5</p>
+                        </div>
+                      </div>
+                      <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                      <a href="#!">Читать</a>
+                    </div>
+                    <div class="rc-one">
+                      <div class="raiting">
+                        <div class="rc-info">
+                          <h6>Никита</h6>
+                          <span>18.09.2025</span>
+                        </div>
+                        <div class="rate">
+                          <p>5</p>
+                        </div>
+                      </div>
+                      <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                      <a href="#!">Читать</a>
+                    </div>
+                  </div>
             </div>
             <div class="movie-card" id="2">
-                <h2>INFO22222222222222222</h2>
-                <p>dckdkcsdkcmsdcksdkcs</p>
+              <div class="mc-all">
+                <div class="movie-card__info">
+                  <h2 class="mc-title">Описание</h2>
+                  <p class="mc-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et dolore<br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br> exercitation ullamco laboris nisi ut aliquip ex ea<br> commodo consequat. Duis aute irure dolor in<br> reprehenderit in voluptate velit esse cillum dolore eu<br> fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br> non proident, sunt in culpa qui officia deserunt mollit<br> anim id est laborum...</p>
+                  <a href="#!">Подробное описание</a>
+              </div>
+              <div class="card-grade">
+                  <h2>Поставьте оценку</h2>
+                  <p>Оценки улучшают ваши рекомендации</p>
+                  <div class="rating">
+                    <input value="5" name="rating" id="star5-{{id}}" type="radio">
+                    <label for="star5-{{id}}"><span>5</span></label>
+                    <input value="4" name="rating" id="star4-{{id}}" type="radio">
+                    <label for="star4-{{id}}"><span>4</span></label>
+                    <input value="3" name="rating" id="star3-{{id}}" type="radio">
+                    <label for="star3-{{id}}"><span>3</span></label>
+                    <input value="2" name="rating" id="star2-{{id}}" type="radio">
+                    <label for="star2-{{id}}"><span>2</span></label>
+                    <input value="1" name="rating" id="star1-{{id}}" type="radio">
+                    <label for="star1-{{id}}"><span>1</span></label>
+                  </div>
+              </div>
+              </div>
+              <h1>Оставить <br>отзыв</h1>
+              <div class="container-form">
+                <form action="#" class="movie-form">
+                  <input type="name" placeholder="Имя" class="form-name">
+                  <!-- <input type="text" placeholder="Сообщение" class="form-message"> -->
+                   <textarea name="text" id="message" placeholder="Сообщение" class="form-message"></textarea>
+                   <button type="button" class="form-btn">
+                    <a href="#!">Отправить</a>
+                   </button>
+                </form>
+              </div>
+                <div class="block-reviews">
+                  <a href="#!">Отзывы</a>
+                  <img src="./images/icons/arrow-reviews.svg" alt="arrow-right">
+                </div>
+                <div class="reviews-cards">
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Илья</h6>
+                        <span>15.04.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Никита</h6>
+                        <span>18.09.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                </div>
             </div>
             <div class="movie-card" id="3">
-                <h2>INFO33333333333333333333</h2>
-                <p>dckdkcsdkcmsdcksdkcs</p>
+              <div class="mc-all">
+                <div class="movie-card__info">
+                  <h2 class="mc-title">Описание</h2>
+                  <p class="mc-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et dolore<br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br> exercitation ullamco laboris nisi ut aliquip ex ea<br> commodo consequat. Duis aute irure dolor in<br> reprehenderit in voluptate velit esse cillum dolore eu<br> fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br> non proident, sunt in culpa qui officia deserunt mollit<br> anim id est laborum...</p>
+                  <a href="#!">Подробное описание</a>
+              </div>
+              <div class="card-grade">
+                  <h2>Поставьте оценку</h2>
+                  <p>Оценки улучшают ваши рекомендации</p>
+                  <div class="rating">
+                    <input value="5" name="rating" id="star5-{{id}}" type="radio">
+                    <label for="star5-{{id}}"><span>5</span></label>
+                    <input value="4" name="rating" id="star4-{{id}}" type="radio">
+                    <label for="star4-{{id}}"><span>4</span></label>
+                    <input value="3" name="rating" id="star3-{{id}}" type="radio">
+                    <label for="star3-{{id}}"><span>3</span></label>
+                    <input value="2" name="rating" id="star2-{{id}}" type="radio">
+                    <label for="star2-{{id}}"><span>2</span></label>
+                    <input value="1" name="rating" id="star1-{{id}}" type="radio">
+                    <label for="star1-{{id}}"><span>1</span></label>
+                  </div>
+              </div>
+              </div>
+              <h1>Оставить <br>отзыв</h1>
+              <div class="container-form">
+                <form action="#" class="movie-form">
+                  <input type="name" placeholder="Имя" class="form-name">
+                  <!-- <input type="text" placeholder="Сообщение" class="form-message"> -->
+                   <textarea name="text" id="message" placeholder="Сообщение" class="form-message"></textarea>
+                   <button type="button" class="form-btn">
+                    <a href="#!">Отправить</a>
+                   </button>
+                </form>
+              </div>
+                <div class="block-reviews">
+                  <a href="#!">Отзывы</a>
+                  <img src="./images/icons/arrow-reviews.svg" alt="arrow-right">
+                </div>
+                <div class="reviews-cards">
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Илья</h6>
+                        <span>15.04.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Никита</h6>
+                        <span>18.09.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                </div>
             </div>
             <div class="movie-card" id="4">
-                <h2>INFO4444444444444444444</h2>
-                <p>dckdkcsdkcmsdcksdkcs</p>
+              <div class="mc-all">
+                <div class="movie-card__info">
+                  <h2 class="mc-title">Описание</h2>
+                  <p class="mc-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et dolore<br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br> exercitation ullamco laboris nisi ut aliquip ex ea<br> commodo consequat. Duis aute irure dolor in<br> reprehenderit in voluptate velit esse cillum dolore eu<br> fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br> non proident, sunt in culpa qui officia deserunt mollit<br> anim id est laborum...</p>
+                  <a href="#!">Подробное описание</a>
+              </div>
+              <div class="card-grade">
+                  <h2>Поставьте оценку</h2>
+                  <p>Оценки улучшают ваши рекомендации</p>
+                  <div class="rating">
+                    <input value="5" name="rating" id="star5-{{id}}" type="radio">
+                    <label for="star5-{{id}}"><span>5</span></label>
+                    <input value="4" name="rating" id="star4-{{id}}" type="radio">
+                    <label for="star4-{{id}}"><span>4</span></label>
+                    <input value="3" name="rating" id="star3-{{id}}" type="radio">
+                    <label for="star3-{{id}}"><span>3</span></label>
+                    <input value="2" name="rating" id="star2-{{id}}" type="radio">
+                    <label for="star2-{{id}}"><span>2</span></label>
+                    <input value="1" name="rating" id="star1-{{id}}" type="radio">
+                    <label for="star1-{{id}}"><span>1</span></label>
+                  </div>
+              </div>
+              </div>
+              <h1>Оставить <br>отзыв</h1>
+              <div class="container-form">
+                <form action="#" class="movie-form">
+                  <input type="name" placeholder="Имя" class="form-name">
+                  <!-- <input type="text" placeholder="Сообщение" class="form-message"> -->
+                   <textarea name="text" id="message" placeholder="Сообщение" class="form-message"></textarea>
+                   <button type="button" class="form-btn">
+                    <a href="#!">Отправить</a>
+                   </button>
+                </form>
+              </div>
+                <div class="block-reviews">
+                  <a href="#!">Отзывы</a>
+                  <img src="./images/icons/arrow-reviews.svg" alt="arrow-right">
+                </div>
+                <div class="reviews-cards">
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Илья</h6>
+                        <span>15.04.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Никита</h6>
+                        <span>18.09.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                </div>
             </div>
             <div class="movie-card" id="5">
-                <h2>INFO55555555555555555555</h2>
-                <p>dckdkcsdkcmsdcksdkcs</p>
+              <div class="mc-all">
+                <div class="movie-card__info">
+                  <h2 class="mc-title">Описание</h2>
+                  <p class="mc-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et dolore<br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br> exercitation ullamco laboris nisi ut aliquip ex ea<br> commodo consequat. Duis aute irure dolor in<br> reprehenderit in voluptate velit esse cillum dolore eu<br> fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br> non proident, sunt in culpa qui officia deserunt mollit<br> anim id est laborum...</p>
+                  <a href="#!">Подробное описание</a>
+              </div>
+              <div class="card-grade">
+                  <h2>Поставьте оценку</h2>
+                  <p>Оценки улучшают ваши рекомендации</p>
+                  <div class="rating">
+                    <input value="5" name="rating" id="star5-{{id}}" type="radio">
+                    <label for="star5-{{id}}"><span>5</span></label>
+                    <input value="4" name="rating" id="star4-{{id}}" type="radio">
+                    <label for="star4-{{id}}"><span>4</span></label>
+                    <input value="3" name="rating" id="star3-{{id}}" type="radio">
+                    <label for="star3-{{id}}"><span>3</span></label>
+                    <input value="2" name="rating" id="star2-{{id}}" type="radio">
+                    <label for="star2-{{id}}"><span>2</span></label>
+                    <input value="1" name="rating" id="star1-{{id}}" type="radio">
+                    <label for="star1-{{id}}"><span>1</span></label>
+                  </div>
+              </div>
+              </div>
+              <h1>Оставить <br>отзыв</h1>
+              <div class="container-form">
+                <form action="#" class="movie-form">
+                  <input type="name" placeholder="Имя" class="form-name">
+                  <!-- <input type="text" placeholder="Сообщение" class="form-message"> -->
+                   <textarea name="text" id="message" placeholder="Сообщение" class="form-message"></textarea>
+                   <button type="button" class="form-btn">
+                    <a href="#!">Отправить</a>
+                   </button>
+                </form>
+              </div>
+                <div class="block-reviews">
+                  <a href="#!">Отзывы</a>
+                  <img src="./images/icons/arrow-reviews.svg" alt="arrow-right">
+                </div>
+                <div class="reviews-cards">
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Илья</h6>
+                        <span>15.04.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Никита</h6>
+                        <span>18.09.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                </div>
             </div>
             <div class="movie-card" id="6">
-                <h2>INFO666666666666</h2>
-                <p>dckdkcsdkcmsdcksdkcs</p>
+              <div class="mc-all">
+                <div class="movie-card__info">
+                  <h2 class="mc-title">Описание</h2>
+                  <p class="mc-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et dolore<br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br> exercitation ullamco laboris nisi ut aliquip ex ea<br> commodo consequat. Duis aute irure dolor in<br> reprehenderit in voluptate velit esse cillum dolore eu<br> fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br> non proident, sunt in culpa qui officia deserunt mollit<br> anim id est laborum...</p>
+                  <a href="#!">Подробное описание</a>
+              </div>
+              <div class="card-grade">
+                  <h2>Поставьте оценку</h2>
+                  <p>Оценки улучшают ваши рекомендации</p>
+                  <div class="rating">
+                    <input value="5" name="rating" id="star5-{{id}}" type="radio">
+                    <label for="star5-{{id}}"><span>5</span></label>
+                    <input value="4" name="rating" id="star4-{{id}}" type="radio">
+                    <label for="star4-{{id}}"><span>4</span></label>
+                    <input value="3" name="rating" id="star3-{{id}}" type="radio">
+                    <label for="star3-{{id}}"><span>3</span></label>
+                    <input value="2" name="rating" id="star2-{{id}}" type="radio">
+                    <label for="star2-{{id}}"><span>2</span></label>
+                    <input value="1" name="rating" id="star1-{{id}}" type="radio">
+                    <label for="star1-{{id}}"><span>1</span></label>
+                  </div>
+              </div>
+              </div>
+              <h1>Оставить <br>отзыв</h1>
+              <div class="container-form">
+                <form action="#" class="movie-form">
+                  <input type="name" placeholder="Имя" class="form-name">
+                  <!-- <input type="text" placeholder="Сообщение" class="form-message"> -->
+                   <textarea name="text" id="message" placeholder="Сообщение" class="form-message"></textarea>
+                   <button type="button" class="form-btn">
+                    <a href="#!">Отправить</a>
+                   </button>
+                </form>
+              </div>
+                <div class="block-reviews">
+                  <a href="#!">Отзывы</a>
+                  <img src="./images/icons/arrow-reviews.svg" alt="arrow-right">
+                </div>
+                <div class="reviews-cards">
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Илья</h6>
+                        <span>15.04.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Никита</h6>
+                        <span>18.09.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                </div>
             </div>
             <div class="movie-card" id="7">
-                <h2>INFO777777777777777</h2>
-                <p>dckdkcsdkcmsdcksdkcs</p>
+              <div class="mc-all">
+                <div class="movie-card__info">
+                  <h2 class="mc-title">Описание</h2>
+                  <p class="mc-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et dolore<br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br> exercitation ullamco laboris nisi ut aliquip ex ea<br> commodo consequat. Duis aute irure dolor in<br> reprehenderit in voluptate velit esse cillum dolore eu<br> fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br> non proident, sunt in culpa qui officia deserunt mollit<br> anim id est laborum...</p>
+                  <a href="#!">Подробное описание</a>
+              </div>
+              <div class="card-grade">
+                  <h2>Поставьте оценку</h2>
+                  <p>Оценки улучшают ваши рекомендации</p>
+                  <div class="rating">
+                    <input value="5" name="rating" id="star5-{{id}}" type="radio">
+                    <label for="star5-{{id}}"><span>5</span></label>
+                    <input value="4" name="rating" id="star4-{{id}}" type="radio">
+                    <label for="star4-{{id}}"><span>4</span></label>
+                    <input value="3" name="rating" id="star3-{{id}}" type="radio">
+                    <label for="star3-{{id}}"><span>3</span></label>
+                    <input value="2" name="rating" id="star2-{{id}}" type="radio">
+                    <label for="star2-{{id}}"><span>2</span></label>
+                    <input value="1" name="rating" id="star1-{{id}}" type="radio">
+                    <label for="star1-{{id}}"><span>1</span></label>
+                  </div>
+              </div>
+              </div>
+              <h1>Оставить <br>отзыв</h1>
+              <div class="container-form">
+                <form action="#" class="movie-form">
+                  <input type="name" placeholder="Имя" class="form-name">
+                  <!-- <input type="text" placeholder="Сообщение" class="form-message"> -->
+                   <textarea name="text" id="message" placeholder="Сообщение" class="form-message"></textarea>
+                   <button type="button" class="form-btn">
+                    <a href="#!">Отправить</a>
+                   </button>
+                </form>
+              </div>
+                <div class="block-reviews">
+                  <a href="#!">Отзывы</a>
+                  <img src="./images/icons/arrow-reviews.svg" alt="arrow-right">
+                </div>
+                <div class="reviews-cards">
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Илья</h6>
+                        <span>15.04.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Никита</h6>
+                        <span>18.09.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                </div>
             </div>
             <div class="movie-card" id="8">
-                <h2>INFO888888888888888</h2>
-                <p>dckdkcsdkcmsdcksdkcs</p>
+              <div class="mc-all">
+                <div class="movie-card__info">
+                  <h2 class="mc-title">Описание</h2>
+                  <p class="mc-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt ut labore et dolore<br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br> exercitation ullamco laboris nisi ut aliquip ex ea<br> commodo consequat. Duis aute irure dolor in<br> reprehenderit in voluptate velit esse cillum dolore eu<br> fugiat nulla pariatur. Excepteur sint occaecat cupidatat<br> non proident, sunt in culpa qui officia deserunt mollit<br> anim id est laborum...</p>
+                  <a href="#!">Подробное описание</a>
+              </div>
+              <div class="card-grade">
+                  <h2>Поставьте оценку</h2>
+                  <p>Оценки улучшают ваши рекомендации</p>
+                  <div class="rating">
+                    <input value="5" name="rating" id="star5-{{id}}" type="radio">
+                    <label for="star5-{{id}}"><span>5</span></label>
+                    <input value="4" name="rating" id="star4-{{id}}" type="radio">
+                    <label for="star4-{{id}}"><span>4</span></label>
+                    <input value="3" name="rating" id="star3-{{id}}" type="radio">
+                    <label for="star3-{{id}}"><span>3</span></label>
+                    <input value="2" name="rating" id="star2-{{id}}" type="radio">
+                    <label for="star2-{{id}}"><span>2</span></label>
+                    <input value="1" name="rating" id="star1-{{id}}" type="radio">
+                    <label for="star1-{{id}}"><span>1</span></label>
+                  </div>
+              </div>
+              </div>
+              <h1>Оставить <br>отзыв</h1>
+              <div class="container-form">
+                <form action="#" class="movie-form">
+                  <input type="name" placeholder="Имя" class="form-name">
+                  <!-- <input type="text" placeholder="Сообщение" class="form-message"> -->
+                   <textarea name="text" id="message" placeholder="Сообщение" class="form-message"></textarea>
+                   <button type="button" class="form-btn">
+                    <a href="#!">Отправить</a>
+                   </button>
+                </form>
+              </div>
+                <div class="block-reviews">
+                  <a href="#!">Отзывы</a>
+                  <img src="./images/icons/arrow-reviews.svg" alt="arrow-right">
+                </div>
+                <div class="reviews-cards">
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Илья</h6>
+                        <span>15.04.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                  <div class="rc-one">
+                    <div class="raiting">
+                      <div class="rc-info">
+                        <h6>Никита</h6>
+                        <span>18.09.2025</span>
+                      </div>
+                      <div class="rate">
+                        <p>5</p>
+                      </div>
+                    </div>
+                    <p class="rc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Maecenas tempor justo diam, blandit pharetra urna<br> ullamcorper eu. Nullam facilisis tristique efficitur. Sed<br> molestie mattis magna, sed consectetur ligula<br> condimentum in. Pellentesque eleifend ut turpis in blandit...</p>
+                    <a href="#!">Читать</a>
+                  </div>
+                </div>
             </div>
         </div>
       </main>
