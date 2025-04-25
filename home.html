@@ -108,7 +108,7 @@
           <div class="main-info">
             <h4 class="more-title">Новинки</h4>
             <div class="more">
-              <a href="#!" class="more-text">Увидеть больше</a>
+              <a href="error.html" class="more-text error-link">Увидеть больше</a>
               <img src="./images/icons/arrow-right.svg" alt="arrow" class="more-arrow">
             </div>
           </div>
@@ -248,5 +248,12 @@
           <a href="#!" class="footer__text">Copyright © 2025 Akim. All rights reserved.</a>
         </div>
       </footer>
+
+      <script>
+        document.querySelectorAll('a.error-link').forEach(link => {
+          const currentUrl = encodeURIComponent(window.location.href);
+          link.href = `error.html?referer=${currentUrl}`;
+        });
+      </script>
 </body>
 </html>
