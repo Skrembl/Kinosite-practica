@@ -63,13 +63,14 @@ const usp = new URLSearchParams(window.location.search);
 const idUsp = usp.get("id");
 const bgUrl = usp.get("bg");
 
+// ! Стили для bg
 if (bgUrl) {
     const headerBg = document.getElementById("body-bg__movie");
     headerBg.style.position = "relative";
     headerBg.style.width = "100%";
     headerBg.style.height = "930px";
     headerBg.style.overflow = "hidden";
-    
+
     headerBg.style.backgroundImage = `url(${decodeURIComponent(bgUrl)})`;
     headerBg.style.backgroundRepeat = "no-repeat";
     headerBg.style.backgroundSize = "cover";
@@ -77,8 +78,15 @@ if (bgUrl) {
     headerBg.style.backgroundAttachment = "fixed";
 }
 
-if (id) {
-    document.querySelectorAll(".movie-card").forEach((card) => {
-        card.style.display = card.id === id ? "block" : "none";
+// ! Обработчик рейтинга
+document.querySelectorAll(".rating").forEach((ratingContainer) => {
+    const inputs = ratingContainer.querySelectorAll('input[type="radio"]');
+
+    inputs.forEach((input) => {
+        input.addEventListener("change", function () {
+            const cardId = this.closest(".movie-card").id;
+            const ratingValue = this.value;
+            console.log(`Оценка ${ratingValue} для карточки ${cardId}`);
+        });
     });
-}
+});

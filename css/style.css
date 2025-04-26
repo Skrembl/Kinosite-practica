@@ -422,7 +422,6 @@ body {
 }
 
 .footer-line {
-    max-width: 1512px;
     border: 1px solid var(--text-color-2);
     margin-bottom: 30px;
 }
@@ -1022,6 +1021,36 @@ body {
         padding: 10px 36px;
         font-size: 14px;
         font-weight: 500;
+    }
+
+    .container-footer {
+        padding: 20px 100px;
+    }
+
+    .footer-block {
+        justify-content: space-between;
+    }
+
+    .footer-logo {
+        width: 230px;
+        margin-right: 75px;
+    }
+
+    .footer-links {
+        gap: 90px;
+        margin-right: 75px;
+
+        & a {
+            font-size: 16px;
+        }
+    }
+
+    .socials {
+        gap: 75px;
+
+        & a img {
+            width: 50px;
+        }
     }
 
     .footer-line {
