@@ -422,7 +422,7 @@ body {
 }
 
 .footer-line {
-    width: 1512px;
+    max-width: 1512px;
     border: 1px solid var(--text-color-2);
     margin-bottom: 30px;
 }
@@ -972,8 +972,13 @@ body {
 
 /* ! ----------------------------------------- МЕДИА ЗАПРОСЫ ----------------------------------- */
 
-@media (min-width: 1080px) and (max-width: 1496px) {
+@media (min-width: 1080px) and (max-width: 1796px) {
     /* ! home */
+
+    .navbar {
+        gap: 30px;
+    }
+
     .mc-content {
         width: 280px;
         height: 406px;
@@ -983,7 +988,46 @@ body {
         display: none;
     }
 
+    .container-main {
+        padding: 80px 100px;
+    }
+
+    .main-cards__one {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
     
+    .main-cards__two {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .mc-content {
+        width: 275px;
+        height: 398px;
+    }
+    
+    .mc-overlay {
+        width: 273px;
+        height: 398px;
+        top: -395px;
+    }
+
+    .mc-overlay button {
+        padding: 10px 36px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .footer-line {
+        max-width: 1512px;
+        margin-bottom: 15px;
+    }
 
     /* ! home */
 }
