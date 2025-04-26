@@ -65,10 +65,16 @@ const bgUrl = usp.get("bg");
 
 if (bgUrl) {
     const headerBg = document.getElementById("body-bg__movie");
+    headerBg.style.position = "relative";
+    headerBg.style.width = "100%";
+    headerBg.style.height = "930px";
+    headerBg.style.overflow = "hidden";
+    
     headerBg.style.backgroundImage = `url(${decodeURIComponent(bgUrl)})`;
+    headerBg.style.backgroundRepeat = "no-repeat";
     headerBg.style.backgroundSize = "cover";
     headerBg.style.backgroundPosition = "center";
-    headerBg.style.height = "930px";
+    headerBg.style.backgroundAttachment = "fixed";
 }
 
 if (id) {

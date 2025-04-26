@@ -115,16 +115,16 @@
           const backButton = document.getElementById('backButton');
       
           if (referer) {
-            // Декодируем URL и устанавливаем кнопке
+
             backButton.href = decodeURIComponent(referer);
           } else {
-            // Если параметра нет, используем history API
+
             backButton.addEventListener('click', (e) => {
               e.preventDefault();
               if (history.length > 1) {
                 history.back();
               } else {
-                window.location.href = "/"; // Резервный переход
+                window.location.href = "/";
               }
             });
           }
