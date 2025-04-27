@@ -316,12 +316,14 @@ body {
 
 .main-cards__one {
     display: flex;
+    justify-content: space-between;
     gap: 30px;
     margin-bottom: 80px;
 }
 
 .main-cards__two {
     display: flex;
+    justify-content: space-between;
     gap: 30px;
 }
 
@@ -335,10 +337,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 357px;
-    height: 517px;
+    width: 350px;
+    height: 512px;
     position: relative;
-    top: -517px;
+    top: -508px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in;
@@ -967,12 +969,14 @@ body {
 }
 /* ! --------------------------- ERROR 404 PAGE ---------------------- */
 
-
-
 /* ! ----------------------------------------- МЕДИА ЗАПРОСЫ ----------------------------------- */
 
 @media (min-width: 1080px) and (max-width: 1796px) {
     /* ! home */
+    .logo {
+        width: 230px;
+        margin-right: 75px;
+    }
 
     .navbar {
         gap: 30px;
@@ -992,25 +996,37 @@ body {
     }
 
     .main-cards__one {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /* display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
         gap: 15px;
         margin-bottom: 40px;
-    }
-    
-    .main-cards__two {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 15px;
     }
 
     .mc-content {
         width: 275px;
         height: 398px;
+        justify-self: center;
     }
-    
+
+    .mc-content img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .main-cards__two {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /* display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
     .mc-overlay {
         width: 273px;
         height: 398px;
@@ -1057,6 +1073,47 @@ body {
         max-width: 1512px;
         margin-bottom: 15px;
     }
+
+    .footer__text {
+        font-size: 14px !important;
+    }
+    /* ! home */
+}
+
+@media (min-width: 1129px) and (max-width: 1444px) {
+    /* ! home */
+    .mc-content {
+        width: 225px;
+        height: 327px;
+    }
+
+    .mc-overlay {
+        width: 220px;
+        height: 323px;
+        top: -320px;
+    }
+    /* ! home */
+}
+
+@media (min-width: 1080px) and (max-width: 1129px) {
+    /* ! home */
+    .mc-content {
+        width: 200px;
+        height: 289px;
+    }
+
+    .mc-overlay {
+        width: 195px;
+        height: 285px;
+        top: -283px;
+    }
+
+    /* ! home */
+}
+
+@media (min-width: 1080px) and (max-width: 1129px) {
+    /* ! home */
+
 
     /* ! home */
 }
