@@ -2,8 +2,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".card-all");
     const bodyBg = document.getElementById("body-bg");
-    const defaultBg = bodyBg.style.backgroundImage;
 
+    if (!bodyBg) {
+        console.error("Элемент body-bg не найден");
+        return;
+    }
+
+    const defaultBg = getComputedStyle(bodyBg).backgroundImage;
     const preloadImages = () => {
         const images = new Set();
         cards.forEach((card) => {
@@ -14,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
             new Image().src = src;
         });
     };
+    
     preloadImages();
-
     cards.forEach((card) => {
         card.addEventListener("mouseenter", function () {
             const bgImage = this.dataset.bg;
@@ -66,16 +71,19 @@ const bgUrl = usp.get("bg");
 // ! Стили для bg
 if (bgUrl) {
     const headerBg = document.getElementById("body-bg__movie");
-    headerBg.style.position = "relative";
-    headerBg.style.width = "100%";
-    headerBg.style.height = "930px";
-    headerBg.style.overflow = "hidden";
+    
+    if (headerBg) {
+        headerBg.style.position = "relative";
+        headerBg.style.width = "100%";
+        headerBg.style.height = "930px";
+        headerBg.style.overflow = "hidden";
 
-    headerBg.style.backgroundImage = `url(${decodeURIComponent(bgUrl)})`;
-    headerBg.style.backgroundRepeat = "no-repeat";
-    headerBg.style.backgroundSize = "cover";
-    headerBg.style.backgroundPosition = "center";
-    headerBg.style.backgroundAttachment = "fixed";
+        headerBg.style.backgroundImage = `url(${decodeURIComponent(bgUrl)})`;
+        headerBg.style.backgroundRepeat = "no-repeat";
+        headerBg.style.backgroundSize = "cover";
+        headerBg.style.backgroundPosition = "center";
+        headerBg.style.backgroundAttachment = "fixed";
+    }
 }
 
 // ! Обработчик рейтинга
@@ -90,3 +98,25 @@ document.querySelectorAll(".rating").forEach((ratingContainer) => {
         });
     });
 });
+
+// ! Скрытие и показ описания фильмов по айди
+function toggleText(cardId) {
+    const infoText = document.getElementById(`infoText-${cardId}`);
+    const full = document.getElementById(`mcFull-${cardId}`);
+    const link = document.getElementById(`link-text-${cardId}`);
+    const collapse = document.getElementById(`linkCollapse-${cardId}`);
+    const hide = document.getElementById(`span-hide-${cardId}`);
+
+    if (full.style.display === 'none' || full.style.display === '') {
+        infoText.style.marginBottom = '-10px';
+        full.style.display = 'block';
+        link.style.display = 'none';
+        collapse.style.display = 'block';
+        hide.style.display = 'none';
+    } else {
+        full.style.display = 'none';
+        link.style.display = 'block';
+        collapse.style.display = 'none';
+        hide.style.display = 'contents';
+    }
+}
