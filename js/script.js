@@ -108,12 +108,13 @@ function toggleText(cardId) {
     const hide = document.getElementById(`span-hide-${cardId}`);
 
     if (full.style.display === 'none' || full.style.display === '') {
-        infoText.style.marginBottom = '-10px';
+        infoText.style.marginBottom = '-5px';
         full.style.display = 'block';
         link.style.display = 'none';
         collapse.style.display = 'block';
         hide.style.display = 'none';
     } else {
+        infoText.style.marginBottom = '';
         full.style.display = 'none';
         link.style.display = 'block';
         collapse.style.display = 'none';
