@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             new Image().src = src;
         });
     };
-    
+
     preloadImages();
     cards.forEach((card) => {
         card.addEventListener("mouseenter", function () {
@@ -71,7 +71,7 @@ const bgUrl = usp.get("bg");
 // ! Стили для bg
 if (bgUrl) {
     const headerBg = document.getElementById("body-bg__movie");
-    
+
     if (headerBg) {
         headerBg.style.position = "relative";
         headerBg.style.width = "100%";
@@ -107,17 +107,33 @@ function toggleText(cardId) {
     const collapse = document.getElementById(`linkCollapse-${cardId}`);
     const hide = document.getElementById(`span-hide-${cardId}`);
 
-    if (full.style.display === 'none' || full.style.display === '') {
-        infoText.style.marginBottom = '-5px';
-        full.style.display = 'block';
-        link.style.display = 'none';
-        collapse.style.display = 'block';
-        hide.style.display = 'none';
+    if (full.style.display === "none" || full.style.display === "") {
+        infoText.style.marginBottom = "-5px";
+        full.style.display = "block";
+        link.style.display = "none";
+        collapse.style.display = "block";
+        hide.style.display = "none";
     } else {
-        infoText.style.marginBottom = '';
-        full.style.display = 'none';
-        link.style.display = 'block';
-        collapse.style.display = 'none';
-        hide.style.display = 'contents';
+        infoText.style.marginBottom = "";
+        full.style.display = "none";
+        link.style.display = "block";
+        collapse.style.display = "none";
+        hide.style.display = "contents";
     }
 }
+
+// ! Обработчик переключателя
+const toggle = document.querySelector(".input");
+const html = document.documentElement;
+
+// ! Проверка сохраненной темы
+const savedTheme = localStorage.getItem("theme") || "light";
+html.setAttribute("data-theme", savedTheme);
+toggle.checked = savedTheme === "dark";
+
+// ! Изменения переключателя
+toggle.addEventListener("change", function () {
+    const theme = this.checked ? "dark" : "light";
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+});
