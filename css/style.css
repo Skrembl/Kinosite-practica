@@ -992,7 +992,7 @@ body {
 /* ! ----------------------------------------- МЕДИА ЗАПРОСЫ ----------------------------------- */
 
 @media (min-width: 1080px) and (max-width: 1796px) {
-    /* ! home */
+    /* ! home page */
     .logo {
         width: 230px;
     }
@@ -1088,9 +1088,9 @@ body {
     .footer__text {
         font-size: 14px !important;
     }
-    /* ! home */
+    /* ! home page */
 
-    /* ! error */
+    /* ! error page*/
     .error-btn {
         width: clamp(250px, 24.3vw, 314px);
         height: clamp(70px, 6.7vw, 88px);
@@ -1108,11 +1108,15 @@ body {
         line-height: normal;
         transition: all 0.3s ease-in;
     }
-    /* ! error */
+    /* ! error page*/
+
+    /* ! movies page */
+    /* ooooooooooooooooooooooooooooooooooooo */
+    /* ! movies page */
 }
 
 @media (min-width: 1129px) and (max-width: 1444px) {
-    /* ! home */
+    /* ! home page */
     .mc-content {
         width: 225px;
         height: 327px;
@@ -1123,9 +1127,9 @@ body {
         height: 323px;
         top: -320px;
     }
-    /* ! home */
+    /* ! home page */
 
-    /* ! error */
+    /* ! error page */
     .main-error {
         padding: 0px 150px 140px 150px;
         background-color: var(--bg-color-1);
@@ -1148,11 +1152,11 @@ body {
         line-height: normal;
         transition: all 0.3s ease-in;
     }
-    /* ! error */
+    /* ! error page */
 }
 
 @media (min-width: 1080px) and (max-width: 1129px) {
-    /* ! home */
+    /* ! home page */
     .mc-content {
         width: 200px;
         height: 289px;
@@ -1163,18 +1167,18 @@ body {
         height: 285px;
         top: -283px;
     }
-    /* ! home */
+    /* ! home page */
 
-    /* ! error */
+    /* ! error page */
     .main-error {
         padding: 0px 150px 70px 150px;
         background-color: var(--bg-color-1);
     }
-    /* ! error */
+    /* ! error page */
 }
 
 @media (min-width: 768px) and (max-width: 1080px) {
-    /* ! home */
+    /* ! home page */
     #body-bg {
         position: relative;
         width: 100%;
@@ -1292,9 +1296,9 @@ body {
     .footer__text {
         font-size: 14px !important;
     }
-    /* ! home */
+    /* ! home page */
 
-    /* ! error */
+    /* ! error page */
     .main-error {
         padding: 0px 150px 70px 150px;
         background-color: var(--bg-color-1);
@@ -1333,17 +1337,11 @@ body {
         line-height: normal;
         transition: all 0.3s ease-in;
     }
-    /* ! error */
+    /* ! error page */
 }
 
 @media (min-width: 768px) and (max-width: 768px) {
-    /* ! home */
-    .carousel-container {
-        transform: translateY(80%) !important;
-    }
-    /* ! home */
-
-    /* ! error */
+    /* ! error page */
     .error-btn {
         width: 250px;
         height: clamp(70px, 6.7vw, 88px);
@@ -1361,11 +1359,24 @@ body {
         line-height: normal;
         transition: all 0.3s ease-in;
     }
-    /* ! error */
+    /* ! error page */
 }
 
 @media (min-width: 420px) and (max-width: 768px) {
-    /* ! home */
+    /* ! home page */
+    #body-bg {
+        position: relative;
+        width: 100%;
+        height: 930px;
+        overflow: hidden;
+        background-image: url("../images/bg-def-mobile.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: local;
+        background-position: center;
+        transition: background-image 0.5s ease;
+    }
+
     .container {
         padding: 25px 50px;
     }
@@ -1488,9 +1499,9 @@ body {
     .footer__text {
         font-size: clamp(7px, 1.6vw, 14px) !important;
     }
-    /* ! home */
+    /* ! home page */
 
-    /* ! error */
+    /* ! error page */
     .main-error {
         padding: 0px 50px 70px 50px;
         background-color: var(--bg-color-1);
@@ -1534,35 +1545,36 @@ body {
         line-height: normal;
         transition: all 0.3s ease-in;
     }
-    /* ! error */
+    /* ! error page */
 }
 
 @media (min-width: 420px) and (max-width: 520px) {
-    /* ! home */
+    /* ! home page */
     .socials {
         display: grid;
         margin-bottom: 10px;
     }
-    /* ! home */
+    /* ! home page */
 
-    /* ! error */
+    /* ! error page */
     .error-text {
         font-size: 20px;
     }
-    /* ! error */
+    /* ! error page */
 }
 
 @media (min-width: 320px) and (max-width: 420px) {
-    /* ! home */
+    /* ! home page */
     #body-bg {
         position: relative;
         width: 100%;
         height: 930px;
         overflow: hidden;
-        background-image: url("../images/bg-def.png");
+        background-image: url("../images/bg-def-mobile.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: local;
+        background-position: center;
         transition: background-image 0.5s ease;
     }
 
@@ -1690,9 +1702,9 @@ body {
     .footer__text {
         font-size: clamp(7px, 1.6vw, 14px) !important;
     }
-    /* ! home */
+    /* ! home page */
 
-    /* ! error */
+    /* ! error page */
     .main-error {
         padding: 0px 50px 70px 50px;
         background-color: var(--bg-color-1);
@@ -1736,7 +1748,7 @@ body {
         line-height: normal;
         transition: all 0.3s ease-in;
     }
-    /* ! error */
+    /* ! error page */
 }
 
 /* ! ----------------------------------------- МЕДИА ЗАПРОСЫ ----------------------------------- */
