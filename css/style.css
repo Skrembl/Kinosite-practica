@@ -974,7 +974,7 @@ body {
 
 .error-btn a {
     padding: 32px 60px;
-    font-size: clamp(14px, 1.2vw, 22px);
+    font-size: clamp(14px, 1vw, 22px);
     line-height: 24px;
     transition: all 0.3s ease-in;
 }
@@ -995,7 +995,6 @@ body {
     /* ! home */
     .logo {
         width: 230px;
-        margin-right: 75px;
     }
 
     .navbar {
@@ -1070,6 +1069,7 @@ body {
 
         & a {
             font-size: 16px;
+            line-height: normal;
         }
     }
 
@@ -1089,6 +1089,26 @@ body {
         font-size: 14px !important;
     }
     /* ! home */
+
+    /* ! error */
+    .error-btn {
+        width: clamp(250px, 24.3vw, 314px);
+        height: clamp(70px, 6.7vw, 88px);
+        border: 3px solid var(--text-color-3);
+        border-radius: 16px;
+        transition: all 0.3s ease-in;
+    }
+
+    .error-btn a {
+        padding-left: clamp(60px, 5.6vw, 67px);
+        padding-right: clamp(60px, 5.6vw, 67px);
+        padding-top: clamp(25px, 2.4vw, 32px);
+        padding-bottom: clamp(25px, 2.4vw, 32px);
+        font-size: clamp(14px, 1.6vw, 22px);
+        line-height: normal;
+        transition: all 0.3s ease-in;
+    }
+    /* ! error */
 }
 
 @media (min-width: 1129px) and (max-width: 1444px) {
@@ -1104,6 +1124,31 @@ body {
         top: -320px;
     }
     /* ! home */
+
+    /* ! error */
+    .main-error {
+        padding: 0px 150px 140px 150px;
+        background-color: var(--bg-color-1);
+    }
+
+    .error-btn {
+        width: clamp(250px, 24.3vw, 314px);
+        height: clamp(70px, 6.7vw, 88px);
+        border: 3px solid var(--text-color-3);
+        border-radius: 16px;
+        transition: all 0.3s ease-in;
+    }
+
+    .error-btn a {
+        padding-left: clamp(60px, 5.6vw, 67px);
+        padding-right: clamp(60px, 5.6vw, 67px);
+        padding-top: clamp(25px, 2.4vw, 32px);
+        padding-bottom: clamp(25px, 2.4vw, 32px);
+        font-size: clamp(14px, 1.6vw, 22px);
+        line-height: normal;
+        transition: all 0.3s ease-in;
+    }
+    /* ! error */
 }
 
 @media (min-width: 1080px) and (max-width: 1129px) {
@@ -1118,8 +1163,14 @@ body {
         height: 285px;
         top: -283px;
     }
-
     /* ! home */
+
+    /* ! error */
+    .main-error {
+        padding: 0px 150px 70px 150px;
+        background-color: var(--bg-color-1);
+    }
+    /* ! error */
 }
 
 @media (min-width: 768px) and (max-width: 1080px) {
@@ -1203,21 +1254,22 @@ body {
     }
 
     .container-footer {
-        padding: 10px 50px;
+        padding: 15px 50px;
     }
-    
+
     .footer-logo {
         width: 170px;
         margin-right: 75px;
     }
 
     .footer-links {
-        gap: 45px;
-        margin-right: 45px;
+        gap: 30px;
+        margin-right: 30px;
         margin-bottom: 15px;
 
         & a {
             font-size: 14px;
+            line-height: normal;
         }
     }
 
@@ -1241,6 +1293,75 @@ body {
         font-size: 14px !important;
     }
     /* ! home */
+
+    /* ! error */
+    .main-error {
+        padding: 0px 150px 70px 150px;
+        background-color: var(--bg-color-1);
+    }
+
+    .tv-container {
+        padding: 65px 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tv-screen {
+        width: 500px;
+        height: 300px;
+    }
+
+    .error-text {
+        font-size: 36px;
+    }
+
+    .error-btn {
+        width: clamp(220px, 28vw, 285px);
+        height: clamp(70px, 6.7vw, 88px);
+        border: 3px solid var(--text-color-3);
+        border-radius: 16px;
+        transition: all 0.3s ease-in;
+    }
+
+    .error-btn a {
+        padding-left: clamp(55px, 7vw, 70px);
+        padding-right: clamp(55px, 7vw, 70px);
+        padding-top: clamp(25px, 2.4vw, 32px);
+        padding-bottom: clamp(25px, 2.4vw, 32px);
+        font-size: clamp(14px, 1.6vw, 22px);
+        line-height: normal;
+        transition: all 0.3s ease-in;
+    }
+    /* ! error */
+}
+
+@media (min-width: 768px) and (max-width: 768px) {
+    /* ! home */
+    .carousel-container {
+        transform: translateY(80%) !important;
+    }
+    /* ! home */
+
+    /* ! error */
+    .error-btn {
+        width: 250px;
+        height: clamp(70px, 6.7vw, 88px);
+        border: 3px solid var(--text-color-3);
+        border-radius: 16px;
+        transition: all 0.3s ease-in;
+    }
+
+    .error-btn a {
+        padding-left: clamp(55px, 7vw, 70px);
+        padding-right: clamp(55px, 7vw, 70px);
+        padding-top: clamp(25px, 2.4vw, 32px);
+        padding-bottom: clamp(25px, 2.4vw, 32px);
+        font-size: clamp(14px, 1.6vw, 22px);
+        line-height: normal;
+        transition: all 0.3s ease-in;
+    }
+    /* ! error */
 }
 
 @media (min-width: 420px) and (max-width: 768px) {
@@ -1331,7 +1452,7 @@ body {
     .container-footer {
         padding: 10px 50px;
     }
-    
+
     .footer-logo {
         width: clamp(100px, 17vw, 150px);
         margin-right: 0;
@@ -1340,10 +1461,11 @@ body {
     .footer-links {
         gap: 15px;
         margin-right: 0px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
 
         & a {
             font-size: clamp(8px, 1.6vw, 14px);
+            line-height: normal;
         }
     }
 
@@ -1367,15 +1489,254 @@ body {
         font-size: clamp(7px, 1.6vw, 14px) !important;
     }
     /* ! home */
+
+    /* ! error */
+    .main-error {
+        padding: 0px 50px 70px 50px;
+        background-color: var(--bg-color-1);
+    }
+
+    .tv-container {
+        padding: 25px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tv-screen {
+        width: 300px;
+        height: 200px;
+    }
+
+    .tv-stand {
+        width: 150px;
+        height: 10px;
+    }
+
+    .error-text {
+        font-size: 24px;
+    }
+
+    .error-btn {
+        width: clamp(230px, 29vw, 290px);
+        height: clamp(60px, 6.7vw, 88px);
+        border: 3px solid var(--text-color-3);
+        border-radius: 16px;
+        transition: all 0.3s ease-in;
+    }
+
+    .error-btn a {
+        padding-left: clamp(50px, 7vw, 55px);
+        padding-right: clamp(50px, 7vw, 55px);
+        padding-top: clamp(25px, 2.4vw, 32px);
+        padding-bottom: clamp(25px, 2.4vw, 32px);
+        font-size: clamp(14px, 1.6vw, 22px);
+        line-height: normal;
+        transition: all 0.3s ease-in;
+    }
+    /* ! error */
 }
 
-@media (min-width: 420px) and (max-width: 576px) {
+@media (min-width: 420px) and (max-width: 520px) {
     /* ! home */
     .socials {
         display: grid;
         margin-bottom: 10px;
     }
     /* ! home */
+
+    /* ! error */
+    .error-text {
+        font-size: 20px;
+    }
+    /* ! error */
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+    /* ! home */
+    #body-bg {
+        position: relative;
+        width: 100%;
+        height: 930px;
+        overflow: hidden;
+        background-image: url("../images/bg-def.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: local;
+        transition: background-image 0.5s ease;
+    }
+
+    .container {
+        padding: 25px 50px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .search-block {
+        width: 300px;
+    }
+
+    .search-input {
+        display: none;
+    }
+
+    .search-icon {
+        width: 30px;
+        height: clamp(20px, 3.8vw, 27px);
+    }
+
+    .switch {
+        display: none;
+    }
+
+    .navbar .settings {
+        width: 45px;
+        height: clamp(30px, 5vw, 40px);
+    }
+
+    .carousel-container {
+        transform: translateY(300%);
+    }
+
+    .carousel-track {
+        gap: 15px;
+    }
+
+    .card {
+        width: 135px;
+        height: auto;
+    }
+
+    .container-main {
+        padding: 15px 25px;
+    }
+
+    .main-info {
+        padding: 15px 0px;
+    }
+
+    .main-cards__one {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .mc-content {
+        width: 180px;
+        height: 260px;
+        justify-self: center;
+    }
+
+    .mc-overlay {
+        width: 175px;
+        height: 255px;
+        top: -255px;
+    }
+
+    .mc-overlay button {
+        padding: 10px 30px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .main-cards__two {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .container-footer {
+        padding: 10px 15px;
+    }
+
+    .footer-logo {
+        width: clamp(50px, 25vw, 150px);
+        margin-right: 0;
+    }
+
+    .footer-links {
+        gap: 10px;
+        margin-right: 0px;
+        margin-bottom: 5px;
+
+        & a {
+            font-size: clamp(8px, 1.6vw, 14px);
+            line-height: normal;
+        }
+    }
+
+    .footer-links li:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+    .socials {
+        display: grid;
+        margin-bottom: 10px;
+        gap: clamp(10px, 4.3vw, 20px);
+
+        & a img {
+            width: 20px;
+        }
+    }
+
+    .footer-line {
+        margin-bottom: 5px;
+    }
+
+    .footer__text {
+        font-size: clamp(7px, 1.6vw, 14px) !important;
+    }
+    /* ! home */
+
+    /* ! error */
+    .main-error {
+        padding: 0px 50px 70px 50px;
+        background-color: var(--bg-color-1);
+    }
+
+    .tv-container {
+        padding: 25px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tv-screen {
+        width: 250px;
+        height: 150px;
+    }
+
+    .tv-stand {
+        width: 150px;
+        height: 10px;
+    }
+
+    .error-text {
+        font-size: 24px;
+    }
+
+    .error-btn {
+        width: clamp(190px, 25vw, 270px);
+        height: clamp(50px, 6.7vw, 88px);
+        border: 3px solid var(--text-color-3);
+        border-radius: 16px;
+        transition: all 0.3s ease-in;
+    }
+
+    .error-btn a {
+        padding-left: clamp(35px, 7vw, 55px);
+        padding-right: clamp(35px, 7vw, 55px);
+        padding-top: clamp(15px, 2.4vw, 32px);
+        padding-bottom: clamp(15px, 2.4vw, 32px);
+        font-size: clamp(14px, 1.6vw, 22px);
+        line-height: normal;
+        transition: all 0.3s ease-in;
+    }
+    /* ! error */
 }
 
 /* ! ----------------------------------------- МЕДИА ЗАПРОСЫ ----------------------------------- */
