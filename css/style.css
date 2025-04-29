@@ -113,8 +113,13 @@ body {
     cursor: pointer;
 }
 
-.navbar .settings {
+.settings {
     cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.settings:hover {
+    transform: rotate(45deg);
 }
 
 /* ! Switch checkbox */
@@ -995,6 +1000,7 @@ body {
 .error-btn a {
     padding: 32px 60px;
     font-size: clamp(14px, 1vw, 22px);
+    font-weight: 500;
     line-height: 24px;
     transition: all 0.3s ease-in;
 }
