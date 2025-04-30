@@ -50,6 +50,7 @@ ul li {
 
 img {
     vertical-align: top;
+    -webkit-user-drag: none;
 }
 
 img,
@@ -126,6 +127,7 @@ a:link,
 a:visited {
     text-decoration: none;
     list-style: none;
+    -webkit-user-drag: none;
     color: #ffffff;
 }
 

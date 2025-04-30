@@ -107,15 +107,15 @@ function toggleText(cardId) {
     const collapse = document.getElementById(`linkCollapse-${cardId}`);
     const hide = document.getElementById(`span-hide-${cardId}`);
 
-    if (full.style.display === "none" || full.style.display === "") {
+    if (full.style.maxHeight === "0px" || !full.style.maxHeight) {
         infoText.style.marginBottom = "-5px";
-        full.style.display = "block";
+        full.style.maxHeight = full.scrollHeight + "px";
         link.style.display = "none";
         collapse.style.display = "block";
         hide.style.display = "none";
     } else {
         infoText.style.marginBottom = "";
-        full.style.display = "none";
+        full.style.maxHeight = "0";
         link.style.display = "block";
         collapse.style.display = "none";
         hide.style.display = "contents";
@@ -136,4 +136,35 @@ toggle.addEventListener("change", function () {
     const theme = this.checked ? "dark" : "light";
     html.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
+});
+
+// ! Скролл для карточек-отзывов
+const container = document.getElementById("cardsContainer");
+let isDown = false;
+let startX;
+let scrollLeft;
+
+container.addEventListener("mousedown", (e) => {
+    isDown = true;
+    container.classList.add("active");
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+});
+
+container.addEventListener("mouseleave", () => {
+    isDown = false;
+    container.classList.remove("active");
+});
+
+container.addEventListener("mouseup", () => {
+    isDown = false;
+    container.classList.remove("active");
+});
+
+container.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 1;
+    container.scrollLeft = scrollLeft - walk;
 });
