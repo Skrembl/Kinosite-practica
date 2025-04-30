@@ -876,10 +876,10 @@ body {
     display: flex;
     align-items: center;
     gap: 40px;
-    overflow: hidden;
     overflow-x: auto;
     cursor: grab;
     scrollbar-width: none;
+    -ms-overflow-style: none;
     /* ! Убрал выделение текста */
     -webkit-user-select: none;
     -moz-user-select: none;

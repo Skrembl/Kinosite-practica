@@ -138,33 +138,50 @@ toggle.addEventListener("change", function () {
     localStorage.setItem("theme", theme);
 });
 
-// ! Скролл для карточек-отзывов
-const container = document.getElementById("cardsContainer");
-let isDown = false;
-let startX;
-let scrollLeft;
+// ! Скролл для карточек-отзывов по айди
+const containerIds = [
+    "cardsContainer1",
+    "cardsContainer2",
+    "cardsContainer3",
+    "cardsContainer4",
+    "cardsContainer5",
+    "cardsContainer6",
+    "cardsContainer7",
+    "cardsContainer8",
+];
 
-container.addEventListener("mousedown", (e) => {
-    isDown = true;
-    container.classList.add("active");
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-});
+containerIds.forEach((id) => {
+    const container = document.getElementById(id);
+    if (!container) return;
 
-container.addEventListener("mouseleave", () => {
-    isDown = false;
-    container.classList.remove("active");
-});
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-container.addEventListener("mouseup", () => {
-    isDown = false;
-    container.classList.remove("active");
-});
+    container.addEventListener("mousedown", (e) => {
+        isDown = true;
+        container.classList.add("active");
+        const rect = container.getBoundingClientRect();
+        startX = e.pageX - rect.left;
+        scrollLeft = container.scrollLeft;
+    });
 
-container.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 1;
-    container.scrollLeft = scrollLeft - walk;
+    container.addEventListener("mouseleave", () => {
+        isDown = false;
+        container.classList.remove("active");
+    });
+
+    container.addEventListener("mouseup", () => {
+        isDown = false;
+        container.classList.remove("active");
+    });
+
+    container.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const rect = container.getBoundingClientRect();
+        const x = e.pageX - rect.left;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+    });
 });
