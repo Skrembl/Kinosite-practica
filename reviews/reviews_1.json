@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Илья",
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor justo diam, blandit pharetra urna ullamcorper eu. Nullam facilisis tristique efficitur. Sed molestie mattis magna, sed consectetur ligula condimentum in. Pellentesque eleifend ut turpis in blandit...",
+        "date": "2025-04-11"
+    },
+    {
+        "name": "Максим",
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor justo diam, blandit pharetra urna ullamcorper eu. Nullam facilisis tristique efficitur. Sed molestie mattis magna, sed consectetur ligula condimentum in. Pellentesque eleifend ut turpis in blandit...",
+        "date": "2025-04-19"
+    },
+    {
+        "name": "Никита",
+        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor justo diam, blandit pharetra urna ullamcorper eu. Nullam facilisis tristique efficitur. Sed molestie mattis magna, sed consectetur ligula condimentum in. Pellentesque eleifend ut turpis in blandit...",
+        "date": "2025-04-24"
+    }
+]

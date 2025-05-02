@@ -65,6 +65,10 @@ body {
     transition: background-image 0.5s ease;
 }
 
+#body-bg__movie {
+    height: 930px;
+}
+
 #body-error {
     background-color: var(--bg-color-1);
 }
@@ -657,96 +661,8 @@ body {
     color: var(--text-color-1);
 }
 
-.card-grade {
-    width: 768px;
-    height: 357px;
-    margin-top: 80px;
-    padding: 70px 119px 70px 50px;
-    background-color: var(--bg-color-4);
-    border-radius: 30px;
-}
-
-/* ! --------------------------------- Создание звезд -------------------------------- */
-.rating {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.rating input {
-    display: none;
-}
-
-.rating label {
-    cursor: pointer;
-    position: relative;
-    width: 80px;
-    height: 77px;
-}
-
-.rating label::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/icons/star.svg");
-    background-size: cover;
-    transition: all 0.3s ease;
-}
-
-.rating label::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: url("../images/icons/star-hover.svg");
-    background-size: cover;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.rating label span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    color: white;
-    z-index: 2;
-}
-
-.rating input:checked ~ label::after,
-.rating label:hover::after,
-.rating label:hover ~ label::after {
-    opacity: 1;
-}
-
-.rating label:hover::before {
-    filter: brightness(1.2);
-}
-/* ! --------------------------------- Создание звезд -------------------------------- */
-
-.card-grade h2 {
-    margin-bottom: 15px;
-    font-size: clamp(20px, 1.2vw, 36px);
-    font-weight: 500;
-    line-height: 40px;
-}
-
-.card-grade p {
-    margin-bottom: 45px;
-    font-size: clamp(14px, 1vw, 24px);
-    font-weight: 500;
-    line-height: 40px;
-}
-
 .movie-card h1 {
-    margin-top: 150px;
+    margin-top: 55px;
     margin-bottom: 80px;
     text-align: center;
     font-size: clamp(36px, 2.5vw, 64px);
@@ -829,31 +745,24 @@ body {
 
 .form-btn {
     padding: 23px 80px;
+    font-size: clamp(14px, 1.3vw, 24px);
+    font-weight: 500;
+    line-height: 24px;
     border: 3px solid var(--bg-color-5);
     border-radius: 16px;
     transition: all 0.3s ease-in;
-
-    & a {
-        font-size: clamp(14px, 1.3vw, 24px);
-        font-weight: 500;
-        line-height: 24px;
-        transition: all 0.3s ease-in;
-    }
 }
 
 .form-btn:hover {
     background-color: var(--bg-color-1);
     border: 3px solid var(--bg-color-3);
-
-    & a {
-        color: var(--bg-color-3);
-    }
+    color: var(--bg-color-3);
 }
 /* ! --------------------- Форма ------------------------ */
 
 .block-reviews {
     width: 130px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     display: flex;
     align-items: center;
     transition: all 0.3s ease-in;
@@ -873,9 +782,6 @@ body {
 }
 
 .reviews-cards {
-    display: flex;
-    align-items: center;
-    gap: 40px;
     overflow-x: auto;
     cursor: grab;
     scrollbar-width: none;
@@ -887,8 +793,22 @@ body {
     user-select: none;
 }
 
+[id^="reviews-"] {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    & b {
+        margin: 0 auto;
+        font-size: 36px;
+        font-weight: 500;
+        color: var(--text-color-1);
+    }
+}
+
 .rc-one {
     width: 735px;
+    height: 280px;
     padding: 40px 60px;
     background-color: var(--bg-color-4);
     border-radius: 50px;
@@ -902,12 +822,6 @@ body {
     letter-spacing: 1.6px;
 }
 
-.raiting {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .raiting span {
     font-size: clamp(14px, 1.2vw, 24px);
     font-weight: 500;
@@ -916,23 +830,14 @@ body {
     color: var(--text-color-2);
 }
 
-.rate {
-    width: 85px;
-    height: 85px;
-    background-color: var(--bg-color-3);
-    border-radius: 15px;
-    margin-bottom: 25px;
-}
-
-.rate p {
-    padding: 15px 30px;
-    text-align: center;
-    font-size: clamp(20px, 2vw, 40px);
-    font-weight: 500;
-    line-height: 56px;
+.rc-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .rc-text {
+    word-break: break-word;
     width: 530px;
     margin-bottom: 25px;
     font-size: clamp(14px, 1.2vw, 20px);
@@ -1093,6 +998,10 @@ body {
 
 @media (min-width: 1080px) and (max-width: 1796px) {
     /* ! home page */
+    #body-bg__movie {
+        height: clamp(630px, 70vw, 830px);
+    }
+
     .logo {
         width: 230px;
     }
@@ -1231,27 +1140,8 @@ body {
         letter-spacing: 3.6px;
     }
 
-    .card-grade {
-        width: 768px;
-        height: 327px;
-        margin-top: 40px !important;
-        padding: 35px 119px 35px 50px;
-        background-color: var(--bg-color-4);
-        border-radius: 30px;
-        margin: 0 auto;
-    }
-
-    .card-grade h2 {
-        font-size: clamp(20px, 1.8vw, 36px);
-    }
-
-    .card-grade p {
-        margin-bottom: 25px;
-        font-size: clamp(16px, 1.2vw, 24px);
-    }
-
     .movie-card h1 {
-        margin-top: 75px;
+        margin-top: 35px;
         margin-bottom: 40px;
         text-align: center;
         font-size: clamp(36px, 2.5vw, 64px);
@@ -1279,12 +1169,12 @@ body {
         width: clamp(500px, 40vw, 800px);
         height: auto;
         padding: 25px 0px 25px 30px;
-        font-size: clamp(14px, 2vw, 32px);
+        font-size: clamp(14px, 1.5vw, 32px);
         border: 2px solid var(--bg-color-4);
         border-radius: 20px;
 
         &::placeholder {
-            font-size: clamp(14px, 2vw, 32px);
+            font-size: clamp(14px, 1.5vw, 32px);
             color: var(--text-color-2);
         }
     }
@@ -1315,6 +1205,18 @@ body {
         -ms-overflow-style: none;
     }
 
+    [id^="reviews-"] {
+        display: flex;
+        align-items: center;
+
+        & b {
+            margin: 0 auto;
+            font-size: clamp(24px, 2vw, 36px);
+            font-weight: 500;
+            color: var(--text-color-1);
+        }
+    }
+
     .reviews-cards::-webkit-scrollbar {
         display: none;
     }
@@ -1329,20 +1231,12 @@ body {
     }
 
     .rc-one {
+        height: clamp(200px, 15vw, 250px);
         padding: 30px 50px;
     }
 
     .rc-one h6 {
         margin-bottom: 0px;
-    }
-
-    .rate {
-        width: 75px;
-        height: 75px;
-    }
-
-    .rate p {
-        padding: 10px 30px;
     }
 
     .rc-text {
@@ -1424,6 +1318,10 @@ body {
         background-repeat: no-repeat;
         background-attachment: fixed;
         transition: background-image 0.5s ease;
+    }
+
+    #body-bg__movie {
+        height: clamp(530px, 70vw, 730px);
     }
 
     .container {
@@ -1595,39 +1493,6 @@ body {
         letter-spacing: 3.6px;
     }
 
-    .card-grade {
-        text-align: center;
-        width: clamp(568px, 75vw, 768px);
-        height: 275px;
-        margin-top: 30px !important;
-        padding: 35px 90px 35px 50px;
-        background-color: var(--bg-color-4);
-        border-radius: 30px;
-        margin: 0 auto;
-    }
-
-    .card-grade h2 {
-        margin-bottom: 5px;
-    }
-
-    .card-grade p {
-        margin-bottom: 30px;
-    }
-
-    .rating {
-        gap: 25px;
-    }
-
-    .rating label {
-        width: 62px;
-        height: 60px;
-    }
-
-    .rating label span {
-        transform: translate(-45%, -45%);
-        font-size: 20px;
-    }
-
     .movie-card h1 {
         margin-top: 75px;
         margin-bottom: 40px;
@@ -1687,6 +1552,19 @@ body {
         -ms-overflow-style: none;
     }
 
+    [id^="reviews-"] {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        & b {
+            margin: 0 auto;
+            font-size: clamp(14px, 2vw, 36px);
+            font-weight: 500;
+            color: var(--text-color-1);
+        }
+    }
+
     .reviews-cards::-webkit-scrollbar {
         display: none;
     }
@@ -1701,6 +1579,7 @@ body {
     }
 
     .rc-one {
+        height: 160px;
         padding: 15px 25px;
         border-radius: 35px;
     }
@@ -1708,16 +1587,6 @@ body {
     .rc-one h6 {
         margin-bottom: 0px;
         line-height: normal;
-    }
-
-    .rate {
-        width: 65px;
-        height: 65px;
-        margin-bottom: 15px;
-    }
-
-    .rate p {
-        padding: 5px 15px;
     }
 
     .rc-text {
@@ -1761,6 +1630,10 @@ body {
         background-attachment: local;
         background-position: center;
         transition: background-image 0.5s ease;
+    }
+
+    #body-bg__movie {
+        height: clamp(430px, 70vw, 630px);
     }
 
     .container {
@@ -1934,6 +1807,44 @@ body {
     /* ! error page */
 
     /* ! movies page */
+    .film-p {
+        margin-bottom: 20px;
+        font-size: clamp(12px, 1.2vw, 24px);
+    }
+
+    .film-h6 {
+        margin-bottom: 10px;
+        font-size: clamp(12px, 1.2vw, 24px);
+
+        & span {
+            font-size: clamp(20px, 1.9vw, 32px);
+            font-weight: 600;
+        }
+    }
+
+    .watch {
+        width: 150px;
+        height: 50px;
+        margin-top: 35px;
+        margin-right: clamp(5px, 2.5vw, 35px);
+
+        & a {
+            padding: 15px 35px;
+            font-size: clamp(14px, 1.4vw, 24px);
+        }
+    }
+
+    .favorite {
+        width: 150px;
+        height: 50px;
+        margin-top: 20px;
+
+        & a {
+            padding: 15px 20px;
+            font-size: clamp(14px, 1.4vw, 24px);
+        }
+    }
+
     .container-main__movies {
         padding: 15px 25px;
     }
@@ -1966,38 +1877,6 @@ body {
         font-size: clamp(12px, 2vw, 24px);
     }
 
-    .card-grade {
-        width: clamp(370px, 75vw, 768px);
-        height: 175px;
-        padding: 15px 30px 15px 25px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .card-grade h2 {
-        margin-bottom: 5px;
-        line-height: normal;
-    }
-
-    .card-grade p {
-        margin-bottom: 15px;
-    }
-
-    .rating {
-        gap: 5px;
-        justify-content: space-evenly;
-    }
-
-    .rating label {
-        width: 42px;
-        height: 40px;
-    }
-
-    .rating label span {
-        transform: translate(-45%, -45%);
-        font-size: 14px;
-    }
-
     .movie-card h1 {
         margin-top: 35px;
         margin-bottom: 20px;
@@ -2024,37 +1903,41 @@ body {
     }
 
     .form-name {
-        width: clamp(450px, 65vw, 600px);
+        width: clamp(150px, 65vw, 550px);
         height: auto;
-        padding: 25px 0px 25px 30px;
-        font-size: clamp(14px, 2vw, 32px);
-
-        &::placeholder {
-            font-size: clamp(14px, 2vw, 32px);
-        }
+        padding: 15px 0px 15px 15px;
     }
 
     .form-message {
-        width: clamp(450px, 65vw, 600px);
-        height: 200px;
-        padding: 25px 0px 25px 30px;
-        font-size: clamp(14px, 2vw, 32px);
-        resize: none;
-
-        &::placeholder {
-            font-size: clamp(14px, 2vw, 32px);
-        }
+        width: clamp(150px, 65vw, 550px);
+        height: 100px;
+        padding: 15px 0px 15px 15px;
     }
 
     .form-btn {
-        padding: 14px 50px;
+        padding: 12px 40px;
     }
 
-    .reviews-cards {
-        overflow-x: auto;
-        cursor: grab;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+    .block-reviews {
+        margin-bottom: 15px;
+    }
+
+    .block-reviews a {
+        margin-right: 5px;
+        font-size: clamp(18px, 1.2vw, 36px);
+    }
+
+    [id^="reviews-"] {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        & b {
+            margin: 0 auto;
+            font-size: clamp(14px, 2vw, 36px);
+            font-weight: 500;
+            color: var(--text-color-1);
+        }
     }
 
     .reviews-cards::-webkit-scrollbar {
@@ -2066,14 +1949,11 @@ body {
         user-select: none;
     }
 
-    .block-reviews {
-        margin-bottom: 25px;
-    }
-
     .rc-one {
-        width: 480px;
-        padding: 15px 25px;
-        border-radius: 35px;
+        width: 420px;
+        height: 160px;
+        padding: 10px 15px;
+        border-radius: 20px;
     }
 
     .rc-one h6 {
@@ -2081,18 +1961,10 @@ body {
         line-height: normal;
     }
 
-    .rate {
-        width: 65px;
-        height: 65px;
-        margin-bottom: 15px;
-    }
-
-    .rate p {
-        padding: 5px 15px;
-    }
-
     .rc-text {
+        width: 320px;
         margin-bottom: 10px;
+        font-size: clamp(12px, 1.2vw, 20px);
     }
     /* ! movies page */
 }
@@ -2117,7 +1989,7 @@ body {
     #body-bg {
         position: relative;
         width: 100%;
-        height: 930px;
+        height: 430px;
         overflow: hidden;
         background-image: url("../images/bg-def-mobile.jpg");
         background-repeat: no-repeat;
@@ -2125,6 +1997,10 @@ body {
         background-attachment: local;
         background-position: center;
         transition: background-image 0.5s ease;
+    }
+
+    #body-bg__movie {
+        height: 330px;
     }
 
     .container {
@@ -2158,7 +2034,7 @@ body {
     }
 
     .carousel-container {
-        transform: translateY(300%);
+        transform: translateY(55%);
     }
 
     .carousel-track {
@@ -2298,6 +2174,214 @@ body {
         transition: all 0.3s ease-in;
     }
     /* ! error page */
+
+    /* ! movies page */
+    .back-link {
+        justify-content: left;
+    }
+
+    .back-link a {
+        margin-left: 5px;
+        font-size: clamp(12px, 1.2vw, 24px);
+    }
+
+    .film-h1 {
+        margin-bottom: 20px;
+    }
+
+    .film-p {
+        margin-bottom: 15px;
+        font-size: clamp(12px, 1.2vw, 24px);
+
+        & span {
+            padding: 8px 6px;
+            margin-right: 10px;
+            font-size: clamp(14px, 1.2vw, 20px);
+            background-color: #7ece75;
+            border-radius: 5px;
+        }
+    }
+
+    .film-h6 {
+        margin-bottom: 10px;
+        font-size: clamp(10px, 1.2vw, 24px);
+
+        & span {
+            font-size: clamp(14px, 1.9vw, 32px);
+            font-weight: 600;
+        }
+    }
+
+    .watch {
+        width: 100px;
+        height: 40px;
+        margin-top: 15px;
+        margin-right: clamp(0px, 1vw, 35px);
+
+        & a {
+            padding: 10px 15px;
+            font-size: clamp(12px, 1.4vw, 24px);
+        }
+    }
+
+    .favorite {
+        width: 110px;
+        height: 40px;
+        margin-top: 10px;
+
+        & a {
+            padding: 10px 7px;
+            font-size: clamp(12px, 1.4vw, 24px);
+        }
+    }
+
+    .container-main__movies {
+        padding: 10px 15px;
+    }
+
+    .mc-all {
+        display: block;
+    }
+
+    .movie-card__info {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+
+    .mc-title {
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: clamp(18px, 1.5vw, 36px);
+        font-weight: 500;
+        letter-spacing: 3.6px;
+    }
+
+    .mc-info {
+        line-height: 24px;
+        margin-bottom: 5px;
+        font-size: clamp(10px, 2vw, 24px);
+    }
+
+    .mc-info__all {
+        line-height: 24px;
+        font-size: clamp(10px, 2vw, 24px);
+    }
+
+    .movie-card__info a {
+        font-size: clamp(12px, 1vw, 28px);
+    }
+
+    .movie-card h1 {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: clamp(18px, 4vw, 64px);
+        line-height: 24px;
+        letter-spacing: 6.4px;
+    }
+
+    .container-form {
+        max-width: 1360px;
+        padding: 0px 10px;
+        margin: 0 auto;
+    }
+
+    .movie-form {
+        gap: 10px;
+        padding: 10px 0px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        border: 3px solid var(--bg-color-4);
+        border-radius: 25px;
+    }
+
+    .form-name {
+        width: clamp(200px, 45vw, 300px);
+        height: auto;
+        padding: 10px 0px 10px 10px;
+        font-size: clamp(12px, 1.5vw, 32px);
+        border-radius: 10px;
+
+        &::placeholder {
+            font-size: clamp(12px, 1.5vw, 32px);
+        }
+    }
+
+    .form-message {
+        width: clamp(200px, 45vw, 300px);
+        height: 100px;
+        padding: 10px 0px 10px 10px;
+        font-size: clamp(12px, 1.5vw, 32px);
+        border-radius: 10px;
+
+        &::placeholder {
+            font-size: clamp(12px, 1.5vw, 32px);
+        }
+    }
+
+    .form-btn {
+        padding: 10px 30px;
+        font-size: clamp(12px, 1.3vw, 24px);
+    }
+
+    .block-reviews {
+        margin-bottom: 10px;
+    }
+
+    .block-reviews a {
+        margin-right: 0px;
+        font-size: clamp(14px, 1.2vw, 36px);
+    }
+
+    [id^="reviews-"] {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        & b {
+            margin: 0 auto;
+            font-size: clamp(12px, 1.2vw, 24px);
+            font-weight: 500;
+            color: var(--text-color-1);
+        }
+    }
+
+    .reviews-cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .reviews-cards.active {
+        cursor: grabbing;
+        user-select: none;
+    }
+
+    .rc-one {
+        width: 260px;
+        height: 120px;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+
+    .rc-one h6 {
+        margin-bottom: 0px;
+        font-size: clamp(12px, 2vw, 32px);
+        line-height: normal;
+    }
+
+    .raiting span {
+        font-size: clamp(10px, 1.2vw, 24px);
+    }
+
+    .rc-text {
+        width: 240px;
+        margin-bottom: 0px;
+        font-size: clamp(9px, 1.2vw, 20px);
+    }
+
+    .rc-one a {
+        font-size: clamp(12px, 1.2vw, 24px);
+        line-height: 24px;
+    }
+    /* ! movies page */
 }
 
 /* ! ----------------------------------------- МЕДИА ЗАПРОСЫ ----------------------------------- */

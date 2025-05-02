@@ -75,7 +75,6 @@ if (bgUrl) {
     if (headerBg) {
         headerBg.style.position = "relative";
         headerBg.style.width = "100%";
-        headerBg.style.height = "930px";
         headerBg.style.overflow = "hidden";
 
         headerBg.style.backgroundImage = `url(${decodeURIComponent(bgUrl)})`;
@@ -184,4 +183,107 @@ containerIds.forEach((id) => {
         const walk = (x - startX) * 2;
         container.scrollLeft = scrollLeft - walk;
     });
+});
+
+//! Форма отзывов
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieId = urlParams.get("id");
+
+    if (!movieId) {
+        const reviewsBlock = document.getElementById("reviews");
+        if (reviewsBlock) reviewsBlock.innerHTML = "<p>Фильм не найден.</p>";
+        return;
+    }
+
+    const reviewForm = document.getElementById(`review-form-${movieId}`);
+    const nameInput = document.getElementById(`name-${movieId}`);
+    const messageInput = document.getElementById(`message-${movieId}`);
+    const reviewsBlock = document.getElementById(`reviews-${movieId}`);
+
+    function loadReviews() {
+        if (!reviewsBlock) return;
+
+        reviewsBlock.innerHTML = "";
+
+        fetch(`server/get_reviews.php?id=${movieId}`)
+            .then((res) => {
+                if (!res.ok) throw new Error("Ошибка ответа сервера");
+                return res.json();
+            })
+            .then((data) => {
+                if (!Array.isArray(data) || data.length === 0) {
+                    reviewsBlock.innerHTML = "<b>Пока нет отзывов.</b>";
+                    return;
+                }
+
+                data.forEach((r) => {
+                    const date = new Date(r.date).toLocaleDateString("ru-RU");
+                    const fullText = r.review.replace(/\n/g, "<br>");
+                    const shortText =
+                        fullText.length > 220
+                            ? fullText.slice(0, 220) + "..."
+                            : fullText;
+
+                    const html = `
+              <div class="rc-one"> 
+                <div class="raiting">
+                  <div class="rc-info">
+                    <h6>${r.name}</h6>
+                    <span>${date}</span>
+                  </div>
+                </div>
+                <p class="rc-text">${shortText}</p>
+                ${fullText.length > 220 ? `<a href="#" class="read-more">Читать</a>` : ""}
+              </div>`;
+                    reviewsBlock.insertAdjacentHTML("beforeend", html);
+                });
+            })
+            .catch((err) => {
+                console.error("Ошибка загрузки отзывов:", err);
+                reviewsBlock.innerHTML = "<b>Ошибка загрузки отзывов.</b>";
+            });
+    }
+
+    if (reviewForm) {
+        reviewForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = nameInput.value.trim();
+            const text = messageInput.value.trim();
+
+            if (!name || !text) {
+                alert("Пожалуйста, заполните все поля.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("name", name);
+            formData.append("review", text);
+            formData.append("movie_id", movieId);
+
+            fetch("server/save_review.php", {
+                method: "POST",
+                body: formData,
+            })
+                .then((res) => {
+                    if (!res.ok) throw new Error("Ошибка при отправке");
+                    return res.json();
+                })
+                .then((data) => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        reviewForm.reset();
+                        loadReviews();
+                    }
+                })
+                .catch((err) => {
+                    console.error("Ошибка отправки отзыва:", err);
+                    alert("Не удалось отправить отзыв. Попробуйте позже.");
+                });
+        });
+    }
+
+    loadReviews();
 });

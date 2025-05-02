@@ -22,7 +22,6 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
 </head>
 <body>
   <div id="top"></div>
@@ -50,12 +49,12 @@
             </div>
             <div class="carousel-container">
                 <div class="carousel-track" id="carousel">
-                  <div data-id="1" class="card card-all" data-bg="images/cards/bg-cards/card1.png">
+                  <a href="movies.html?id=1&bg=images/cards/bg-cards/card1.png" class="card card-all"data-id="1" data-bg="images/cards/bg-cards/card1.png">
                     <img src="images/cards/card1.png" alt="Lion King" draggable="false"/>
-                </div>
-                  <div data-id="2" class="card card-all" data-bg="images/cards/bg-cards/card2.png">
-                    <img src="images/cards/card2.png" alt="Vikings" draggable="false"/>
-                </div>
+                  </a>
+                  <a href="movies.html?id=2&bg=images/cards/bg-cards/card2.png" class="card card-all"data-id="2" data-bg="images/cards/bg-cards/card2.png">
+                    <img src="images/cards/card2.png" alt="Lion King" draggable="false"/>
+                  </a>
                   <div data-id="3" class="card card-all" data-bg="images/cards/bg-cards/card3.png">
                     <img src="images/cards/card3.png" alt="Zəhər Tuluğu" draggable="false"/>
                 </div>
@@ -256,5 +255,7 @@
           link.href = `error.html?referer=${currentUrl}`;
         });
       </script>
+
+      <script src="js/script.js"></script>
 </body>
 </html>
