@@ -294,14 +294,8 @@ window.addEventListener("load", () => {
     if (preloader) {
         setTimeout(() => {
             preloader.classList.add("hide");
-<<<<<<< HEAD
-            // Удаляем элемент после окончания анимации скрытия
-            setTimeout(() => preloader.remove(), 1000);
-        }, 2000);
-=======
             setTimeout(() => preloader.remove(), 1000);
         }, 1000);
->>>>>>> 9486dec (Initial commit)
     }
 });
 
