@@ -1,3 +1,57 @@
+// ! Меню
+document.addEventListener("DOMContentLoaded", () => {
+    const settingsBtn = document.querySelector(".settings");
+    const menu = document.querySelector(".menu");
+    const closeBtn = document.querySelector(".close-btn");
+
+    settingsBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        menu.classList.remove("active");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && e.target !== settingsBtn) {
+            menu.classList.remove("active");
+        }
+    });
+});
+
+// ! Скрытие и показ информации в меню
+// Находим нужные элементы
+const menu = document.querySelector(".menu");
+const view = document.querySelector(".view-info");
+const hidden = document.querySelector(".hidden");
+const closeBtn = document.querySelector(".close-btn");
+
+view.addEventListener("click", () => {
+    hidden.classList.toggle("active");
+});
+
+function closeMenu() {
+    menu.classList.remove("open");
+    hidden.classList.remove("active");
+}
+
+closeBtn.addEventListener("click", closeMenu);
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        closeMenu();
+    }
+});
+
+document.addEventListener("click", (e) => {
+    const isClickOutside =
+        !menu.contains(e.target) && !e.target.matches(".menu-toggle");
+    if (isClickOutside) {
+        closeMenu();
+    }
+});
+
 // ! Смена изображения при наведении на карточки(карусель)
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".card-all");
@@ -122,19 +176,27 @@ function toggleText(cardId) {
 }
 
 // ! Обработчик переключателя
-const toggle = document.querySelector(".input");
+const toggles = document.querySelectorAll(".input");
 const html = document.documentElement;
 
-// ! Проверка сохраненной темы
+//! Загрузка сохранённой темы
 const savedTheme = localStorage.getItem("theme") || "light";
 html.setAttribute("data-theme", savedTheme);
-toggle.checked = savedTheme === "dark";
 
-// ! Изменения переключателя
-toggle.addEventListener("change", function () {
-    const theme = this.checked ? "dark" : "light";
-    html.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
+toggles.forEach((toggle) => {
+    toggle.checked = savedTheme === "dark";
+});
+
+// ! Обработчик для каждого переключателя
+toggles.forEach((toggle) => {
+    toggle.addEventListener("change", function () {
+        const theme = this.checked ? "dark" : "light";
+        html.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+
+        // ! Синхронизация всех переключателей
+        toggles.forEach((t) => (t.checked = this.checked));
+    });
 });
 
 // ! Скролл для карточек-отзывов по айди
