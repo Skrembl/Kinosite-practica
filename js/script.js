@@ -287,3 +287,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loadReviews();
 });
+
+// ! Загрузка страниц
+window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add("hide");
+            // Удаляем элемент после окончания анимации скрытия
+            setTimeout(() => preloader.remove(), 1000);
+        }, 2000);
+    }
+});
+
+document.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+        if (!link.hasAttribute("target")) {
+            const preloader = document.getElementById("preloader");
+            if (preloader) {
+                preloader.style.display = "flex";
+                preloader.style.opacity = "1";
+                preloader.style.pointerEvents = "auto";
+            }
+        }
+    });
+});
